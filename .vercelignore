@@ -1,0 +1,8 @@
+.git
+.vercel
+.artifacts
+tools
+node_modules
+README.md
+AGENTS.md
+*.log

@@ -1,0 +1,70 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "",
+  "installCommand": "",
+  "outputDirectory": ".",
+  "cleanUrls": true,
+  "trailingSlash": true,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    },
+    {
+      "source": "/wp-content/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, stale-while-revalidate=604800"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/project/event-photoshoot-2",
+      "destination": "/portfolio/",
+      "permanent": false
+    },
+    {
+      "source": "/project/event-photoshoot-3",
+      "destination": "/portfolio/",
+      "permanent": false
+    },
+    {
+      "source": "/project/event-photoshoot-4",
+      "destination": "/portfolio/",
+      "permanent": false
+    },
+    {
+      "source": "/project/photo-culinaire2",
+      "destination": "/portfolio/",
+      "permanent": false
+    },
+    {
+      "source": "/project/product-photoshoot-2",
+      "destination": "/portfolio/",
+      "permanent": false
+    },
+    {
+      "source": "/project/product-photoshoot",
+      "destination": "/portfolio/",
+      "permanent": false
+    },
+    {
+      "source": "/project/test",
+      "destination": "/portfolio/",
+      "permanent": false
+    }
+  ]
+}

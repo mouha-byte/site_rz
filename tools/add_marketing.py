@@ -1,0 +1,5 @@
+from pathlib import Path
+p=Path('developpement/index.html');s=p.read_text(encoding='utf-8')
+content='''<section class="dev-marketing"><div class="dev-wrap"><p class="dev-kicker">Notre métier : faire grandir votre présence</p><h2>Le marketing, l’image et la vidéo.<br>Une seule équipe pour votre marque.</h2><div class="dev-marketing-columns"><p>Professionnels du marketing et de la production visuelle, nous réunissons stratégie, photographie, vidéo et développement pour créer un site qui valorise votre activité et vos produits.</p><div><p>Les photos et vidéos réalisées pour votre site peuvent aussi être utilisées sur vos réseaux sociaux. Nous proposons également le <strong>social media management</strong> : création de contenu et gestion de vos pages pour une communication cohérente dans la durée.</p><a class="dev-btn" href="/service/social-media-management/">Découvrir la gestion des réseaux sociaux <span aria-hidden="true">↗</span></a></div></div></div></section>'''
+if 'class="dev-marketing"' not in s:s=s.replace('<section id="realisations">',content+'<section id="realisations">')
+p.write_text(s,encoding='utf-8')

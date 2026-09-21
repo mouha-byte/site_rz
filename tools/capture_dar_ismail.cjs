@@ -1,0 +1,2 @@
+const {chromium}=require('playwright');const fs=require('fs');
+(async()=>{const browser=await chromium.launch({channel:'msedge',headless:true});const page=await browser.newPage({viewport:{width:1440,height:900}});await page.goto('https://dar-ismail-tabarka.vercel.app/',{waitUntil:'domcontentloaded',timeout:60000});await page.waitForTimeout(8000);console.log((await page.locator('body').innerText()).slice(0,5500));fs.writeFileSync('.artifacts/dar-ismail.html',await page.content());await page.screenshot({path:'.artifacts/dar-ismail.png'});await browser.close()})();
