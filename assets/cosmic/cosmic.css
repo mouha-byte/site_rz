@@ -1,0 +1,94 @@
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff;color:#101820;font-family:Arial,Helvetica,sans-serif}header{position:fixed;top:0;left:0;right:0;z-index:5;padding:28px 4.5%;display:flex;align-items:center;gap:28px;color:white;mix-blend-mode:difference}a{color:inherit;text-decoration:none}.brand{font-size:27px;font-weight:700;letter-spacing:-1px}.brand span{font-weight:400}.brand small{display:block;font-size:10px;letter-spacing:2.3px;margin-top:6px;font-weight:400}.domain{margin-left:auto;font-size:14px}button{font:inherit;cursor:pointer}#cosmic-motion{color:inherit;background:none;border:1px solid #ffffff50;border-radius:30px;padding:10px 17px;font-size:14px}button:focus-visible,a:focus-visible{outline:2px solid #66cfff;outline-offset:6px}#cosmic-journey{height:1250svh}.stage{position:sticky;top:0;height:100svh;overflow:hidden;background:#010307}canvas{width:100%;height:100%;display:block}.intro{position:absolute;bottom:16%;left:0;right:0;text-align:center;color:#eef7ff;pointer-events:none}.eyebrow{font-size:12px;letter-spacing:3px}.intro h1{font-weight:400;font-size:clamp(34px,4vw,60px);letter-spacing:8px;margin:17px 0 12px}.intro p{font-size:15px;color:#aebfcc;letter-spacing:1px}.scroll{position:absolute;bottom:6%;width:100%;text-align:center;color:#9aafc2;font-size:10px;letter-spacing:3px;pointer-events:none}.scroll span{display:block;font-size:23px;margin-top:12px}.scroll .interaction-hint{font-size:10px;letter-spacing:2px;margin-top:0}.white-title{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:0 12%;opacity:0;pointer-events:none}.white-title span{font-size:12px;letter-spacing:3px}.white-title h2{font-size:clamp(45px,7.5vw,116px);font-weight:400;line-height:1.06;letter-spacing:-4px;margin:30px 0}
+#cosmic-space{cursor:grab;touch-action:pan-y;outline:none}#cosmic-space.dragging{cursor:grabbing}#cosmic-space:focus-visible{outline:1px solid #76bdfd;outline-offset:-5px}
+.service-shade{position:absolute;inset:0;opacity:0;pointer-events:none;background:linear-gradient(90deg,transparent 20%,rgba(1,4,9,.45) 43%,rgba(1,4,9,.95) 100%)}.service-shade.left{transform:scaleX(-1)}
+.service-panel{position:absolute;top:50%;width:42%;max-width:560px;color:#f4f8fc;opacity:0;visibility:hidden;transform:translateY(-45%);padding:30px 0;pointer-events:none}.service-panel.right{right:7%}.service-panel.left{left:7%}.service-number{font-size:15px;letter-spacing:2px;color:#a2d8ff;margin:0 0 24px}.service-number span{font-size:11px;color:#9eafc3}.service-panel h2{font-size:clamp(32px,4.3vw,64px);font-weight:400;letter-spacing:-2px;line-height:1.05;margin:0 0 20px}.service-tagline{font-size:14px;letter-spacing:.2px;color:#b3d1e5;margin:0 0 22px}.service-panel ul{list-style:none;margin:0;padding:0;max-width:460px}.service-panel li{font-size:clamp(15px,1.25vw,18px);line-height:1.55;padding:9px 0;border-top:1px solid #bfd9f11f;color:#c5d1df}
+.journey-nav{position:absolute;bottom:27px;left:50%;transform:translateX(-50%);display:flex;gap:12px;opacity:0;visibility:hidden}.journey-nav button{width:36px;height:34px;background:none;border:0;border-top:1px solid #91acc551;color:#90a7bc;font-size:12px;transition:color .25s,border-color .25s}.journey-nav button[aria-current="step"]{border-color:#e1f5ff;color:#fff}.journey-nav button:hover{color:#fff;border-color:#a8d9ff}
+#expertises{padding:110px 12% 55px;min-height:80vh}#expertises h2{font-size:clamp(40px,5.5vw,80px);line-height:1.1;font-weight:400;letter-spacing:-2px;margin:35px 0 60px}.expertise-index{display:grid;grid-template-columns:1fr 1fr;gap:0 55px;margin-bottom:90px}.expertise-index button{display:flex;align-items:center;gap:16px;min-height:75px;text-align:left;padding:18px 0;border:0;border-top:1px solid #d9dfe3;background:none;color:#18232b;font-size:17px;line-height:1.4}.expertise-index button span:first-child{color:#89959e;font-size:12px}.expertise-index button span:last-child{margin-left:auto;color:#55778b}.closing{border-top:1px solid #d9dfe3;padding-top:32px;display:flex;justify-content:space-between;align-items:center;font-size:14px;line-height:1.7}
+@media(max-width:700px){header{padding:22px 6%;gap:14px}.brand{font-size:25px}.domain{font-size:13px}.intro{bottom:20%}.white-title{padding:0 8%}.white-title h2{letter-spacing:-2px}#expertises{padding:80px 8% 40px}.expertise-index{grid-template-columns:1fr;margin-bottom:60px}.eyebrow{font-size:10px;letter-spacing:2px}.scroll .interaction-hint{max-width:270px;line-height:1.8;margin:0 auto}.service-panel,.service-panel.right,.service-panel.left{left:8%;right:8%;width:auto;max-width:none;top:43%;padding:12px 0;transform:none!important}.service-panel h2{font-size:clamp(31px,8vw,44px);letter-spacing:-1.1px;margin-bottom:12px}.service-number{margin-bottom:14px;font-size:13px}.service-number span{font-size:10px}.service-tagline{font-size:13px;margin-bottom:12px}.service-panel li{font-size:14px;line-height:1.4;padding:7px 0}.service-shade,.service-shade.left{transform:none;background:linear-gradient(0deg,rgba(1,4,9,.97) 5%,rgba(1,4,9,.92) 50%,transparent 90%)}.journey-nav{bottom:18px;gap:10px}.journey-nav button{height:29px;width:31px}}
+@media(max-height:700px) and (min-width:701px){.service-panel{top:51%;padding:12px 0}.service-panel h2{font-size:38px}.service-panel li{font-size:14px;padding:6px 0}.service-number{margin-bottom:14px}.service-tagline{margin-bottom:12px}}
+@media(max-height:730px) and (max-width:700px){.service-panel,.service-panel.left,.service-panel.right{top:34%;max-height:58svh;overflow:auto;pointer-events:auto}.service-panel h2{font-size:29px}.service-panel li{font-size:14px;padding:5px 0}.service-tagline{display:none}.journey-nav{bottom:10px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Integrate the supplied stellar introduction with the existing RZ site. */
+#rz-cosmic{position:relative;isolation:isolate;width:100%;color:#101820;font-family:Arial,Helvetica,sans-serif;font-weight:400;line-height:1.5;--header-height:90px}
+#rz-cosmic :is(h1,h2,p,ul){padding:0}
+#rz-cosmic h1,#rz-cosmic h2{font-family:Arial,Helvetica,sans-serif;text-transform:none}
+#rz-cosmic a{text-decoration:none}
+#rz-cosmic .cosmic-tools{position:absolute;z-index:3;top:calc(var(--header-height) + 20px);left:4.5%;right:4.5%;display:flex;justify-content:space-between;align-items:center;gap:16px;color:#c7dcea;font-size:13px;mix-blend-mode:difference}
+#rz-cosmic .cosmic-tools a{color:inherit}
+#rz-cosmic .cosmic-tools a:hover{color:#fff}
+#rz-cosmic .cosmic-tools button{color:inherit;border-color:#7896a780}
+#rz-cosmic .cosmic-service-link{display:inline-flex;align-items:center;gap:20px;color:#a2d8ff;border-bottom:1px solid #6cb4e45c;padding:10px 0;margin-top:12px;font-size:14px;pointer-events:auto}
+#rz-cosmic .cosmic-service-link:hover{color:#fff;border-color:currentColor}
+#rz-cosmic .service-panel ul{list-style:none}
+#rz-cosmic .cosmic-fallback-logo{display:none}
+#rz-home-content{scroll-margin-top:90px}
+#rz-cosmic.is-unavailable #cosmic-journey,#rz-cosmic.reduced-motion #cosmic-journey{height:auto}
+#rz-cosmic.is-unavailable .stage,#rz-cosmic.reduced-motion .stage{position:relative;height:auto;padding:140px 7% 70px}
+#rz-cosmic.is-unavailable :is(canvas,.scroll,.service-shade,.journey-nav,.cosmic-tools),#rz-cosmic.reduced-motion :is(canvas,.scroll,.service-shade,.journey-nav,.cosmic-tools){display:none}
+#rz-cosmic.is-unavailable .intro,#rz-cosmic.reduced-motion .intro{position:static;opacity:1!important;margin-bottom:60px}
+#rz-cosmic.is-unavailable .cosmic-fallback-logo,#rz-cosmic.reduced-motion .cosmic-fallback-logo{display:block;width:150px;height:150px;object-fit:contain;margin:0 auto 25px}
+#rz-cosmic.is-unavailable .service-panel,#rz-cosmic.reduced-motion .service-panel{position:relative;inset:auto;transform:none!important;opacity:1!important;visibility:visible!important;width:100%;max-width:760px;max-height:none;margin:0 auto 40px;padding:30px 0;pointer-events:auto}
+#rz-cosmic.is-unavailable .white-title,#rz-cosmic.reduced-motion .white-title{position:relative;opacity:1!important;color:#fff;padding:40px 0;max-width:760px;margin:auto}
+@media(max-width:700px){
+ #rz-cosmic .cosmic-tools{left:6%;right:6%;top:calc(var(--header-height) + 12px);font-size:12px}
+ #rz-cosmic .cosmic-service-link{font-size:13px;margin-top:8px;padding:8px 0}
+ #rz-cosmic .intro p{font-size:15px}
+ #rz-cosmic .service-panel li{padding:6px 0}
+}
+@media(max-width:700px) and (max-height:650px){
+ #rz-cosmic .service-panel,#rz-cosmic .service-panel.left,#rz-cosmic .service-panel.right{top:34%;max-height:calc(66svh - 55px)}
+ #rz-cosmic .service-panel h2{font-size:26px}
+ #rz-cosmic .service-panel li{font-size:13px;padding:4px 0}
+}
+/* The opening is a standalone page; the agency site is at /accueil/. */
+.cosmic-opening{margin:0;background:#fff;color:#101820;font-family:Arial,Helvetica,sans-serif}
+.cosmic-opening header{z-index:10}
+.cosmic-opening header .site-entry{margin-left:auto;display:inline-flex;align-items:center;gap:16px;font-size:14px}
+.cosmic-opening header .domain{margin-left:0}
+#rz-cosmic .intro{bottom:14%}
+#rz-cosmic .opening-cta{display:inline-flex;gap:30px;align-items:center;padding:18px 24px;border:1px solid #9db6c9;border-radius:40px;color:#101820;margin-bottom:70px;font-size:17px}
+#rz-cosmic .opening-cta:hover{background:#edf5fb}
+#rz-cosmic #expertises button{color:#18232b}
+@media(max-width:700px){
+ .cosmic-opening header{padding:20px 5%;gap:14px}
+ .cosmic-opening header .domain{display:none}
+ .cosmic-opening header .brand{font-size:22px}
+ .cosmic-opening header .brand small{font-size:8px;letter-spacing:1.6px}
+ .cosmic-opening header .site-entry{font-size:12px;gap:8px}
+ .cosmic-opening header #cosmic-motion{padding:8px 12px;font-size:12px}
+ #rz-cosmic .intro{bottom:20%}
+ #rz-cosmic .intro h1{font-size:34px;margin:12px 0 8px}
+ #rz-cosmic .scroll{bottom:4%}
+}/* Minimal opening: the stellar logo and one large name. */
+#rz-cosmic .intro{bottom:12%;}
+#rz-cosmic .intro h1{font-size:clamp(72px,10vw,160px);font-weight:400;letter-spacing:-.055em;line-height:1;margin:0}
+#rz-cosmic .opening-fallback{display:none}
+#rz-cosmic.is-unavailable .opening-fallback,#rz-cosmic.reduced-motion .opening-fallback{display:block;margin:0;padding:30px 7% 60px;text-align:center;font-size:20px}
+.cosmic-exit{position:fixed;inset:0;background:#fff;z-index:100;opacity:0;pointer-events:none}
+@media(max-width:700px){#rz-cosmic .intro{bottom:18%}#rz-cosmic .intro h1{font-size:clamp(64px,19vw,100px)}}
+/* The opening words remain visible as scattered stars assemble behind them. */
+#rz-cosmic .intro{inset:0;display:flex;align-items:center;padding:0 clamp(24px,4vw,72px)}
+#rz-cosmic .intro h1{display:flex;align-items:center;justify-content:space-between;width:100%;gap:24px;font-size:clamp(34px,4.5vw,72px);font-weight:400;letter-spacing:-.035em;line-height:1.1;text-shadow:0 2px 20px #01030799}
+#rz-cosmic.is-unavailable .intro,#rz-cosmic.reduced-motion .intro{display:block;padding:0}
+@media(max-width:700px){#rz-cosmic .intro{inset:0;padding:0 max(20px,6vw,env(safe-area-inset-right)) 0 max(20px,6vw,env(safe-area-inset-left))}#rz-cosmic .intro h1{font-size:clamp(28px,8vw,38px)}}
+#rz-cosmic.is-ready .intro h1 span{animation:reach-word-reveal .7s cubic-bezier(.2,.7,.2,1) .06s both}
+#rz-cosmic.is-ready .intro h1 span:last-child{animation-delay:.2s}
+@keyframes reach-word-reveal{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){#rz-cosmic.is-ready .intro h1 span{animation:none}}
+
+/* A stable dark viewport while modules load and mobile browser chrome resizes. */
+html:has(body.cosmic-opening){background:#010307;overscroll-behavior-y:none}
+body.cosmic-opening{background:#010307;color:#eef7ff;overscroll-behavior-y:none}
+#rz-cosmic{background:#010307}
+#rz-cosmic .stage{height:100vh;height:100dvh}
+#rz-cosmic:not(.is-ready):not(.reduced-motion) .intro{visibility:hidden}
+#rz-cosmic.is-unavailable:not(.is-ready) #cosmic-journey{height:100vh;height:100dvh}
+#rz-cosmic.is-unavailable:not(.is-ready) .stage{height:100vh;height:100dvh;padding:0}
+#rz-cosmic.is-unavailable:not(.is-ready) .service-panel{display:none}
+#rz-cosmic.is-unavailable:not(.is-ready) .intro{position:absolute;inset:0;display:flex;align-items:center;margin:0;padding:0 6%;visibility:visible}
+#rz-cosmic.is-unavailable:not(.is-ready) .opening-fallback{position:absolute;bottom:10%;left:0;right:0;color:#a2d8ff;padding:20px}
+.cosmic-noscript{position:fixed;bottom:10%;left:6%;right:6%;text-align:center;color:#a2d8ff;z-index:3;padding:20px}
+/* Reduced-motion visitors keep the readable version without animated zooms. */
+#rz-cosmic.reduced-motion .stage{height:auto}
+#rz-cosmic.reduced-motion .opening-fallback{color:#a2d8ff}

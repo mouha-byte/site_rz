@@ -1,0 +1,97 @@
+/* A single layered SVG actor moves between reserved spaces in the six chapters. */
+.fox-stop{display:none}
+.has-dev-fox .fox-stop{display:none;pointer-events:none}
+.has-dev-fox .room:not(#entree){padding-top:215px}
+.has-dev-fox #entree .room-content{grid-template-columns:1.35fr 1fr;max-width:1280px;text-align:left}
+.has-dev-fox #entree .copy{max-width:690px}
+.has-dev-fox #entree .hero-services{justify-content:flex-start}
+.has-dev-fox #entree .fox-stop{display:block;grid-column:2;width:min(28vw,320px);height:auto;aspect-ratio:260/300;margin:0;justify-self:center}
+.dev-fox{position:fixed;top:0;left:0;width:260px;height:300px;z-index:8;transform-origin:0 0;pointer-events:none;opacity:0;transition:opacity .18s}
+.dev-fox.is-ready{opacity:1}
+.dev-fox.is-hidden{opacity:0;pointer-events:none}
+.fox-touch{border:0;background:none;padding:0;width:100%;height:100%;cursor:pointer;pointer-events:auto;touch-action:pan-y;-webkit-tap-highlight-color:transparent}
+.fox-touch:focus-visible{outline:3px solid #168bcf;outline-offset:5px;border-radius:30px}
+.fox-touch svg{display:block;width:100%;height:100%;overflow:visible}
+.fox-head{transform-origin:132px 150px;transition:transform .18s ease-out}
+.fox-pupils{transition:transform .1s ease-out}
+.fox-tail{transform-origin:170px 246px;animation:fox-tail 3.5s ease-in-out infinite}
+.fox-arm-left{transform-origin:91px 177px}
+.fox-arm-right{transform-origin:171px 179px}
+.fox-leg-left{transform-origin:110px 233px}
+.fox-leg-right{transform-origin:148px 233px}
+.fox-character{transform-origin:130px 170px}
+.fox-prop{opacity:0;transition:opacity .2s}
+.dev-fox[data-action="0"] .fox-arm-right{animation:fox-wave 2.4s ease-in-out 2}
+.dev-fox[data-action="1"] .fox-laptop,.dev-fox[data-action="2"] .fox-phone,.dev-fox[data-action="3"] .fox-cube,.dev-fox[data-action="4"] .fox-pencil,.dev-fox[data-action="5"] .fox-card{opacity:1}
+.dev-fox[data-action="1"] .fox-arm-left{animation:fox-type .55s ease-in-out 8}
+.dev-fox[data-action="1"] .fox-arm-right{animation:fox-type .55s .2s ease-in-out 8 reverse}
+.dev-fox[data-action="2"] .fox-arm-left{transform:rotate(12deg)}
+.dev-fox[data-action="2"] .fox-arm-right{animation:fox-tap 1.4s ease-in-out 3}
+.dev-fox[data-action="3"] .fox-cube{transform-origin:201px 185px;animation:fox-cube 3s ease-in-out 2}
+.dev-fox[data-action="3"] .fox-arm-right{transform:rotate(-18deg)}
+.dev-fox[data-action="4"] .fox-pencil{transform-origin:196px 220px;animation:fox-draw 1.6s ease-in-out 3}
+.dev-fox[data-action="4"] .fox-arm-right{animation:fox-draw 1.6s ease-in-out 3}
+.dev-fox[data-action="5"] .fox-arm-right{animation:fox-present 2s ease-in-out 2}
+.dev-fox.is-greeting .fox-arm-right{animation:fox-wave 1s ease-in-out 2}
+.dev-fox.is-traveling .fox-character{transform:rotate(-5deg);transform-origin:130px 170px}
+.dev-fox.is-traveling .fox-arm-left{transform:rotate(40deg);animation:none}
+.dev-fox.is-traveling .fox-arm-right{transform:rotate(-55deg);animation:none}
+.dev-fox.is-traveling .fox-prop{opacity:0}
+.dev-fox.is-paused *,.dev-fox.is-hidden *{animation-play-state:paused!important}
+.dev-fox.is-static *{animation:none!important;transition:none!important}
+.fox-vortex,.fox-dust{transform-origin:130px 265px;pointer-events:none}
+.vortex-ribbon,.vortex-eyes,.vortex-streaks{transform-origin:130px 170px}
+.dev-fox.is-tornado .vortex-ribbon-a{animation:fox-swirl .19s linear infinite}
+.dev-fox.is-tornado .vortex-ribbon-b{animation:fox-swirl .14s linear infinite reverse}
+.dev-fox.is-tornado .vortex-streaks{animation:fox-speed .24s ease-out infinite}
+.dev-fox.is-tornado .vortex-eyes{animation:fox-dizzy .28s ease-in-out infinite alternate}
+.dev-fox.is-tornado .fox-tail{animation:fox-tail .12s linear infinite}
+@keyframes fox-swirl{0%{transform:translateX(-4px) skewX(-7deg) scaleX(.94)}50%{transform:translateX(4px) skewX(7deg) scaleX(1.04)}100%{transform:translateX(-4px) skewX(-7deg) scaleX(.94)}}
+@keyframes fox-speed{from{transform:scale(.9);opacity:.9}to{transform:scale(1.15);opacity:.15}}
+@keyframes fox-dizzy{from{transform:translateX(-9px) rotate(-4deg)}to{transform:translateX(9px) rotate(4deg)}}
+.fox-speaking-mouth{opacity:0;transform-origin:133px 155px}
+.dev-fox.is-speaking .fox-speaking-mouth{opacity:1;animation:fox-talk .32s ease-in-out infinite alternate}
+.dev-fox.is-speaking .fox-arm-right{animation:fox-present 1.8s ease-in-out 2}
+@keyframes fox-talk{from{transform:scaleY(.25)}to{transform:scaleY(1.4)}}
+.fox-speech{position:fixed;z-index:9;width:310px;max-width:calc(100vw - 112px);padding:12px 30px 12px 15px;background:#fff;border:1px solid #a9d8f2;border-radius:15px 4px 15px 15px;box-shadow:0 6px 20px #174e7612;color:#254f70;font:14px/1.5 'DM Sans',Arial,sans-serif;pointer-events:auto}
+.fox-speech[hidden]{display:none}
+.fox-speech strong{display:block;color:#087aba;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:3px}
+.fox-speech button{position:absolute;right:6px;top:5px;background:none;border:0;color:#456986;padding:3px 5px;font-size:17px}
+.fox-speech .speech-line{display:block;min-height:3em}
+.fox-announcement{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+@media(max-width:700px){.fox-speech{font-size:12px;line-height:1.4;padding:9px 23px 9px 10px}.fox-speech strong{font-size:9px}.fox-speech .speech-line{min-height:4.2em}}
+@keyframes fox-tail{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(7deg)}}
+@keyframes fox-wave{0%,100%{transform:rotate(0)}25%,65%{transform:rotate(-122deg)}45%,85%{transform:rotate(-95deg)}}
+@keyframes fox-type{0%,100%{transform:rotate(15deg)}50%{transform:rotate(28deg)}}
+@keyframes fox-tap{0%,100%{transform:rotate(15deg)}45%,65%{transform:rotate(48deg)}}
+@keyframes fox-cube{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-15px) rotate(18deg)}}
+@keyframes fox-draw{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(12deg)}}
+@keyframes fox-present{0%,100%{transform:rotate(-15deg)}50%{transform:rotate(-60deg)}}
+.dev-fox.is-walking .fox-leg-left{animation:fox-step .48s ease-in-out infinite}
+.dev-fox.is-walking .fox-leg-right{animation:fox-step .48s -.24s ease-in-out infinite}
+.dev-fox.is-walking .fox-arm-left{animation:fox-stride .48s -.24s ease-in-out infinite}
+.dev-fox.is-walking .fox-arm-right{animation:fox-stride .48s ease-in-out infinite}
+.dev-fox.is-walking .fox-character{animation:fox-bounce .24s ease-in-out infinite}
+.dev-fox.is-walking .fox-prop{opacity:0}
+.dev-fox.is-walking .fox-head{transform:rotate(4deg)}
+.dev-fox[data-facing="left"] .fox-touch svg{transform:scaleX(-1)}
+@keyframes fox-step{0%,100%{transform:rotate(-16deg)}50%{transform:rotate(16deg)}}
+@keyframes fox-stride{0%,100%{transform:rotate(-18deg)}50%{transform:rotate(18deg)}}
+@keyframes fox-bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@media(max-width:700px){
+ .has-dev-fox .room:not(#entree){padding-top:188px}
+ .has-dev-fox #entree .room-content{grid-template-columns:1fr;text-align:center;gap:14px}
+ .has-dev-fox #entree .hero-services{justify-content:center}
+ .has-dev-fox #entree .fox-stop{grid-column:1;width:160px;height:185px}
+ .has-dev-fox .room-content{row-gap:16px}
+ .has-dev-fox #realisations .room-content,.has-dev-fox #applications .room-content,.has-dev-fox #experiences .room-content{row-gap:16px}
+}
+@media(max-height:740px) and (max-width:700px){.has-dev-fox #entree .fox-stop{width:125px;height:145px}}
+@media(prefers-reduced-motion:reduce){.dev-fox *{animation:none!important;transition:none!important}}
+.fox-heart{transform-origin:132px 175px;pointer-events:none}
+.fox-speech .speech-line{min-height:1.5em;height:1.5em;line-height:1.5;white-space:nowrap;overflow:hidden}
+.fox-speech{padding-top:9px;padding-bottom:9px}
+.dev-fox.is-traveling .fox-character{transform-origin:130px 280px}
+.fox-shadow{transform-origin:133px 285px}
+.fox-sparks{transform-origin:130px 150px;pointer-events:none}
+.dev-fox.is-traveling .fox-touch{pointer-events:none}

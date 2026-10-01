@@ -1,0 +1,22 @@
+const {chromium}=require('playwright');
+(async()=>{
+ const b=await chromium.launch({channel:'msedge',headless:true});
+ const p=await b.newPage({viewport:{width:1440,height:1000}});
+ const pending=new Set();
+ p.on('request',r=>pending.add(r.url()));
+ p.on('requestfinished',r=>pending.delete(r.url()));
+ p.on('requestfailed',r=>pending.delete(r.url()));
+ await p.route('**/*',r=>r.request().url().startsWith('https://site-rz.vercel.app/')||r.request().url().startsWith('data:')?r.continue():r.abort());
+ p.on('pageerror',e=>console.log('ERROR',e.message));
+ p.on('requestfailed',r=>console.log('FAILED',r.url(),r.failure().errorText));
+ await p.goto('https://site-rz.vercel.app/',{waitUntil:'commit'});
+ await p.waitForFunction(()=>!!window.rzThemeReady,{timeout:60000});
+ await p.evaluate(()=>window.rzThemeReady);
+ await p.waitForFunction(()=>[...document.querySelectorAll('.ue-particle-image')].every(image=>image.complete&&image.naturalWidth>0),{},{timeout:60000});
+ await p.waitForTimeout(1500);
+ console.log('PENDING', [...pending]);
+ console.log('STATE',await p.evaluate(()=>({state:document.readyState,elementor:!!window.elementorFrontend,scripts:[...document.scripts].filter(s=>s.type==='litespeed/javascript').map(s=>s.dataset.src||s.id)})));
+ console.log('STYLES',await p.locator('h1,h2,.ue-particle-image').evaluateAll(es=>es.slice(0,15).map(e=>({text:e.innerText,html:e.outerHTML.slice(0,180),opacity:getComputedStyle(e).opacity,visibility:getComputedStyle(e).visibility,rect:e.getBoundingClientRect().toJSON()}))));
+ await p.screenshot({path:'.artifacts/public-home.png',timeout:15000});
+ await b.close();
+})().catch(e=>{console.error(e);process.exit(1)});

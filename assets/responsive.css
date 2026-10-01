@@ -1,0 +1,51 @@
+/* Four footer blocks arranged in two rows. */
+footer .footer__top-6{padding:70px 20px 50px!important}
+footer .footer__top-6>.row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 60px;margin:0}
+footer .footer__top-6>.row>.footer-column{width:100%;max-width:100%;padding:0;min-width:0}
+footer .footer__top-6 .footer-widget{max-width:480px;margin:0}
+footer .footer__newsletter-6 input{width:100%;min-width:0;box-sizing:border-box}
+@media(max-width:1024px){
+ header .header__inner-3{width:100%;max-width:100%;padding:15px 20px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+ header .header__nav-2{display:none!important}header .header__nav-icon-3{margin-left:auto}#open_offcanvas,#close_offcanvas{min-width:44px;min-height:44px}
+ .offcanvas__area{width:100vw;max-width:100vw;height:100dvh!important;overflow:auto}
+ .offcanvas__area.rz-mobile-open{opacity:1!important;visibility:visible!important;transform:none!important;left:0!important}
+ .offcanvas__area .offcanvas__body{display:block;min-height:100%;height:auto;padding-top:85px}
+ .offcanvas__area .offcanvas__left,.offcanvas__area .offcanvas__right,.offcanvas__area .mean-bar{display:none!important}
+ .offcanvas__area .offcanvas__mid{width:100%;height:auto}
+ .offcanvas__area .offcanvas__menu-wrapper{padding:0!important}
+ .offcanvas__area .offcanvas__menu{display:block!important}
+ .offcanvas__menu>ul{display:block!important;list-style:none;margin:0;padding:0}
+ .offcanvas__menu>ul>li>a{display:block!important;font-size:clamp(24px,5vw,36px)!important;line-height:1.4!important;padding:14px 24px!important;color:white!important;border-bottom:1px solid #333}
+ .offcanvas__menu .menu-text{display:flex!important;overflow:visible!important;color:inherit!important}
+ .offcanvas__menu .menu-text span{transform:none!important;color:inherit!important}
+ .offcanvas__close{position:absolute!important;top:15px!important;right:15px!important}
+ body.rz-menu-open{overflow:hidden!important}
+ main img,main video{max-width:100%}main video{height:auto}main iframe{max-width:100%}
+ footer .row{row-gap:30px}footer .footer__info-6 a{overflow-wrap:anywhere}
+ footer input,main input:not([type=hidden]),main textarea,main select{font-size:16px!important;max-width:100%;box-sizing:border-box}
+ footer .footer__newsletter-6{max-width:100%}
+}
+@media(max-width:767px){
+ body{height:auto!important}
+ .body-bg{pointer-events:none!important}
+ body.elementor-page-10132 main:not(.rz-dev) p{font-size:16px!important;line-height:1.6!important}
+ #smooth-wrapper{position:relative!important;inset:auto!important;overflow:visible!important;width:100%!important}
+ #smooth-content{transform:none!important;width:100%!important;overflow:visible!important}
+ main p:not(.dev-intro){font-size:max(16px,1em)}
+ .elementor-gallery__titles-container{flex-wrap:wrap!important;gap:8px!important;justify-content:center!important}
+ .elementor-gallery-title{font-size:16px!important;padding:10px!important;margin:0!important;min-height:44px}
+ .elementor .e-gallery-container.e-gallery-justified{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding-bottom:0!important;height:auto!important}
+ .elementor .e-gallery-justified .e-gallery-item{position:relative!important;inset:auto!important;width:100%!important;height:180px!important;transform:none!important}
+ .elementor .e-gallery-justified .e-gallery-item--hidden{display:none!important}
+ .elementor .e-gallery-justified .e-gallery-image{height:100%!important}
+ footer .footer__top-6{padding:55px 0 35px!important}footer .footer__btm-6{padding:20px 0!important}
+ footer .footer__top-6>.row{gap:30px 20px}
+ footer .footer__top-6 p,footer .footer__top-6 li,footer .footer__top-6 a{overflow-wrap:anywhere}
+ footer .footer__top-6 .footer__item-title{font-size:21px;line-height:1.3;margin-bottom:18px}
+ footer .footer__newsletter-6 input{padding:14px 32px 14px 10px!important}
+ footer .footer__newsletter-6 .subs-btn{right:6px!important}
+ footer .footer__info-6 a[href^="mailto:"]{font-size:14px!important;text-transform:none}
+ footer .footer__item-title{font-size:24px}footer p,footer li,footer a{font-size:16px!important}
+ footer .footer__nav ul{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:12px 20px}
+ .offcanvas__menu>ul>li>a:focus-visible{outline:2px solid #40bfff;outline-offset:-4px}
+}

@@ -1,0 +1,7 @@
+.vercel
+.artifacts/
+node_modules/
+tools/node_modules/
+__pycache__/
+
+.vercel

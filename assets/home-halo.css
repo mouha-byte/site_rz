@@ -1,0 +1,13 @@
+/* A small set of composited layers creates the flowing light around the RZ mark. */
+.rz-home-halo{position:relative;isolation:isolate;width:min(100%,480px);height:450px;margin:auto;display:grid;place-items:center;pointer-events:none}
+.rz-home-halo>span{position:absolute;inset:8%;border-radius:50%;animation-play-state:paused!important}
+.rz-halo-glow{background:radial-gradient(ellipse at 30% 40%,#44d8ff99,transparent 58%),radial-gradient(ellipse at 75% 65%,#9ba3ff80,transparent 60%);filter:blur(18px);animation:rz-halo-breathe 9s ease-in-out infinite}
+.rz-home-halo .rz-halo-ring{inset:11%;background:conic-gradient(from 25deg,#95f3ff,#228bff 24%,#535cec 42%,#dadcff 59%,#34ceff 78%,#95f3ff);mask:radial-gradient(ellipse,#0000 47%,#000 56%,#000 62%,#0000 72%);filter:blur(5px);animation:rz-halo-flow 16s linear infinite}
+.rz-home-halo .rz-halo-core{inset:22%;background:radial-gradient(ellipse at 30% 20%,#8ceaff44,transparent 65%),radial-gradient(ellipse at 80% 90%,#557cff66,transparent 70%);animation:rz-halo-breathe 11s ease-in-out infinite reverse}
+.rz-home-halo .rz-halo-logo{position:relative;z-index:1;width:40%;height:auto;filter:brightness(0) invert(1);opacity:.95}
+.rz-home-halo.is-visible>span{animation-play-state:running!important}
+@keyframes rz-halo-flow{0%{transform:rotate(0) scaleX(1) scaleY(.96)}50%{transform:rotate(180deg) scaleX(.93) scaleY(1.06)}100%{transform:rotate(360deg) scaleX(1) scaleY(.96)}}
+@keyframes rz-halo-breathe{0%,100%{transform:scale(.95) rotate(-12deg);opacity:.75}50%{transform:scale(1.12) rotate(12deg);opacity:1}}
+@media(max-width:1024px){.rz-home-halo{height:320px;width:min(100%,360px)}}
+@media(max-width:480px){.rz-home-halo{height:280px;width:min(100%,310px)}}
+@media(prefers-reduced-motion:reduce){.rz-home-halo>span{animation:none!important}}

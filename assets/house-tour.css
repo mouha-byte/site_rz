@@ -1,0 +1,38 @@
+/* The original house camera, with the current RZ branding and content. */
+html:has(.house-tour){scroll-snap-type:none;scroll-behavior:auto}
+.house-tour #house{position:relative}
+.house-tour .stage{position:fixed;inset:0;perspective:1100px;overflow:hidden;background:#e7f2fa}
+.house-tour .scene{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(var(--look-y,0deg)) rotateY(var(--look-x,0deg));transform-origin:50% 50%}
+.house-tour .room{position:absolute;inset:0;height:100%;min-height:0;max-height:100%;overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;scroll-snap-align:none;backface-visibility:hidden;background:#eff7fc;transform-origin:50% 50%;border:0}
+.house-tour .room,.house-tour .room:nth-child(even){background:transparent}
+.house-tour.is-room-traveling .room{overflow:hidden;pointer-events:none}
+.house-tour.is-room-traveling .atelier-art{background:transparent}
+.house-tour .room:not(.active){pointer-events:none}
+.house-tour .room-content,.house-tour .view-options{position:relative;z-index:1}
+.house-tour .room-5 .view-options{flex-shrink:0}
+.architecture{position:absolute;inset:0;min-height:100%;pointer-events:none;overflow:hidden;background:radial-gradient(ellipse at 75% 25%,#ffffffc0,transparent 50%),linear-gradient(110deg,#b5d2e844,transparent 50%)}
+.architecture:after{content:'';position:absolute;inset:100px 4% 6%;border:1px solid #accde18c;pointer-events:none}
+.wall{position:absolute;top:0;bottom:0;width:9%;background:linear-gradient(90deg,#aacbe155,#e7f3fa88)}
+.left-wall{left:0;clip-path:polygon(0 0,100% 14%,100% 86%,0 100%)}
+.right-wall{right:0;clip-path:polygon(0 14%,100% 0,100% 100%,0 86%);background:linear-gradient(90deg,#e7f3fa88,#aacbe155)}
+.ceiling{position:absolute;top:0;left:0;right:0;height:16%;background:linear-gradient(#cce2f2,#f0f7fc);clip-path:polygon(0 0,100% 0,91% 100%,9% 100%)}
+.floor{position:absolute;inset:85% -50% -65%;transform:perspective(600px) rotateX(58deg);transform-origin:50% 0;background:repeating-linear-gradient(90deg,#acc6dc44 0 1px,transparent 1px 150px),repeating-linear-gradient(0deg,#acc6dc66 0 1px,#dfedf7 1px 90px);border-top:1px solid #a9c8e1}
+.wall-number{position:absolute;right:5%;top:105px;font:150px/1 Georgia,serif;color:#b9d8eb30}
+.house-tour .room.active .architecture{opacity:1}
+body:not(.house-tour) .architecture{opacity:.35}
+.house-tour .room .instruction{color:#456986}
+@media(max-width:700px){
+ .house-tour .stage{perspective:950px}
+ .wall{width:5%}
+ .ceiling{height:12%}
+ .architecture:after{inset:90px 2% 4%}
+ .wall-number{font-size:95px;right:3%;top:95px}
+ .floor{inset:90% -50% -65%}
+ .house-tour .scene{transform:none}
+}
+@media(prefers-reduced-motion:reduce){.house-tour .scene{transform:none}}
+/* Each image, heading, paragraph and button moves as its original DOM node. */
+.motion-component{transform-origin:center;backface-visibility:hidden}
+.house-tour :is(#realisations,#applications,#experiences) .exhibit{position:relative;isolation:isolate;overflow:visible;background:transparent;border-color:transparent}
+.house-tour .exhibit::before{content:'';position:absolute;inset:-1px;border:1px solid #d4e4f0;border-radius:inherit;background:#fff;z-index:-1;pointer-events:none;opacity:var(--assembly-shell,1)}
+.house-tour.is-room-traveling .scene{transform:none!important}

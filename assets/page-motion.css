@@ -1,0 +1,13 @@
+:root{--rz-transition-duration:620ms;--rz-transition-easing:cubic-bezier(.2,.75,.25,1);--rz-transition-scale:.16;--rz-transition-offset:0px;--rz-transition-peak:1.01;--rz-transition-settle:.995}
+@view-transition{navigation:none}
+::view-transition{pointer-events:none}
+::view-transition-group(root){animation-duration:var(--rz-transition-duration)}
+::view-transition-image-pair(root){isolation:isolate}
+::view-transition-old(root),::view-transition-new(root){mix-blend-mode:normal;animation-duration:var(--rz-transition-duration);animation-timing-function:var(--rz-transition-easing);animation-fill-mode:both}
+::view-transition-old(root){z-index:1;animation-name:rz-page-away}
+::view-transition-new(root){z-index:2;animation-name:rz-page-emerge}
+/* Keep the previous page behind the emerging panel until it fills the screen. */
+::view-transition-new(root){transform-origin:50% 50%;overflow:clip}
+@keyframes rz-page-away{0%{transform:scale(1);opacity:1}76%{transform:scale(.97);opacity:.65}100%{transform:scale(.97);opacity:0}}
+@keyframes rz-page-emerge{0%{transform:scale(var(--rz-transition-scale));opacity:0;border-radius:36px}16%{transform:scale(.3);opacity:1;border-radius:30px}76%{transform:scale(var(--rz-transition-peak));opacity:1;border-radius:8px}100%{transform:scale(1);opacity:1;border-radius:0}}
+@media(prefers-reduced-motion:reduce){@view-transition{navigation:none}::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}}
